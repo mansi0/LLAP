@@ -1,0 +1,21 @@
+
+FLoat point Stack
+st0 to st7 = 80 bit registers
+These registers are used as a stack
+
+fld = loads value in st0 when consecutive fld occurs the st0 value is moved to st1 and new value
+is loaded in st0
+fadd st0,st1 = adds float values st0 = st0+st1
+fsub st0,st1 = float subtact st0 = st0 - st1
+fsubr st0,st1 = float reverse subtraction st0 = st1-st0
+fst qword[variable] = store value from st0 to variable
+fstp qword[vaiable] = store value from st0 to variable and pop from the stack
+
+--
+For printing a float value do the following
+  sub esp,8
+  fstp qword[esp]
+  
+  push msg
+  call printf
+  add esp,12

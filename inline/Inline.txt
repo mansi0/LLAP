@@ -1,0 +1,14 @@
+asm ("assembly code");
+IF you have more than one instruction then the newline character must be used 
+to separate the instruction and tab character to align 
+
+mov eax,1
+mov ebx,0
+int 0x80   exit(0);
+
+asm ("movl $1,%eax\n\t"
+     "movl $0, %ebx\n\t"
+     "int $0x80"); 
+
+Whenever you want to use varialbles in Inline assembly, you can not use local varialbles. They should be global variables
+
